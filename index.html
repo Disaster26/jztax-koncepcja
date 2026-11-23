@@ -1,0 +1,547 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Biuro rachunkowe JZ TAX - księgowość, kadry i płace</title>
+<meta name="description" content="Biuro rachunkowe JZ TAX: księga przychodów i rozchodów, księgi handlowe, kadry i płace, deklaracje VAT, CIT i PIT. Licencja MF 9518/2005, ubezpieczenie OC. Tel. 509 801 381.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/lora-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/manrope-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" media="(max-width:760px)" imagesrcset="img/hero-m-600.webp 600w, img/hero-m-900.webp 900w, img/hero-m-1220.webp 1220w" imagesizes="100vw">
+<link rel="preload" as="image" type="image/webp" media="(min-width:761px)" imagesrcset="img/hero-1280.webp 1280w, img/hero-1920.webp 1920w, img/hero-2560.webp 2560w, img/hero-3400.webp 3400w" imagesizes="100vw">
+<style>
+@font-face{font-family:"Manrope";font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/manrope-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0,U+00A9,U+00AB,U+00B0,U+00B7,U+00BB,U+00D3,U+00D7,U+00F3,U+2013-2014,U+2018-2019,U+201C-201E,U+2022,U+2026,U+20AC}
+@font-face{font-family:"Manrope";font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/manrope-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+@font-face{font-family:"Lora";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/lora-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0,U+00A9,U+00AB,U+00B0,U+00B7,U+00BB,U+00D3,U+00D7,U+00F3,U+2013-2014,U+2018-2019,U+201C-201E,U+2022,U+2026}
+@font-face{font-family:"Lora";font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/lora-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+@font-face{font-family:"Manrope-fb";src:local("Arial");size-adjust:104%;ascent-override:102%;descent-override:29%;line-gap-override:0%}
+@font-face{font-family:"Lora-fb";src:local("Georgia");size-adjust:104%;ascent-override:88%;descent-override:24%;line-gap-override:0%}
+:root{
+  --granat:#005289;--granat-g:#003B63;--noc:#0B2238;--zloto:#B48B1B;--zloto-j:#D8B24A;
+  --tekst:#14202C;--szary-t:#4A5866;--tlo-s:#EEF1F4;--linia:#D5DCE3;
+  --serif:"Lora","Lora-fb",Georgia,serif;--sans:"Manrope","Manrope-fb",Arial,sans-serif;
+  --wrap:min(1240px,calc(100% - 40px));--hdr:76px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hdr)}
+body{margin:0;font:400 17px/1.6 var(--sans);color:var(--tekst);background:#fff;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.18;margin:0;color:inherit}
+h2{font-size:clamp(28px,3.4vw,42px)}
+h3{font-size:21px}
+p{margin:0}
+.wrap{width:var(--wrap);margin:0 auto}
+.sek{padding:clamp(64px,8vw,112px) 0}
+/* belka wagi: zlota kreska z punktem podparcia, motyw z logo */
+.belka{display:block;position:relative;width:88px;height:12px;margin:18px 0 0}
+.belka::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--zloto)}
+.belka::after{content:"";position:absolute;left:50%;top:2px;margin-left:-6px;border:6px solid transparent;border-top:8px solid var(--zloto);border-bottom:0}
+.srodek .belka{margin-left:auto;margin-right:auto}
+.lead{font-size:clamp(17px,1.5vw,19px);color:var(--szary-t);max-width:62ch}
+
+/* naglowek */
+.hdr{position:sticky;top:0;z-index:50;height:var(--hdr);background:#fff;border-bottom:1px solid var(--linia)}
+.hdr .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;width:var(--wrap)}
+.logo{display:block;flex:none}
+.logo img{height:56px;width:auto}
+.menu{display:flex;align-items:center;gap:clamp(14px,2vw,30px)}
+.menu a{text-decoration:none;font-weight:600;font-size:15.5px;color:var(--tekst);padding:8px 0;border-bottom:2px solid transparent}
+.menu a:hover,.menu a.akt{border-bottom-color:var(--zloto)}
+.hdr-tel{display:flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;color:var(--granat);font-size:16px;white-space:nowrap}
+.hdr-tel svg{width:18px;height:18px}
+.burger{display:none;width:44px;height:44px;border:0;background:none;padding:10px;cursor:pointer;color:var(--granat)}
+.burger span{display:block;height:2px;background:currentColor;margin:6px 0;transition:transform .2s,opacity .2s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* pierwszy ekran */
+.hero{position:relative;min-height:calc(100svh - var(--hdr));display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--granat-g)}
+.hero picture,.hero picture img{position:absolute;inset:0;width:100%;height:100%}
+.hero picture img{object-fit:cover;object-position:62% 50%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,45,80,.94) 0%,rgba(0,52,90,.82) 34%,rgba(0,58,99,.35) 58%,rgba(0,58,99,0) 74%)}
+.hero-in{position:relative;z-index:2;width:var(--wrap);margin:0 auto;padding:56px 0}
+.hero-tx{max-width:620px}
+.hero h1{font-size:clamp(36px,4.1vw,60px);letter-spacing:-.005em}
+.h1-a{display:block;font-family:var(--sans);font-weight:600;font-size:clamp(16px,1.35vw,19px);letter-spacing:0;margin-bottom:14px;color:#fff;opacity:.92}
+.hero .belka{width:120px;margin-top:24px}
+.hero .lead{color:#E6EDF3;margin-top:20px;max-width:52ch}
+.przyciski{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 26px;font:700 16px/1 var(--sans);text-decoration:none;border:2px solid transparent;border-radius:3px;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.btn-z{background:var(--zloto);color:#0E1A26;border-color:var(--zloto)}
+.btn-z:hover{background:var(--zloto-j);border-color:var(--zloto-j)}
+.btn-o{border-color:rgba(255,255,255,.75);color:#fff}
+.btn-o:hover{background:#fff;color:var(--granat)}
+.btn-g{background:var(--granat);color:#fff}
+.btn-g:hover{background:var(--granat-g)}
+
+/* o nas */
+.onas{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(36px,6vw,88px);align-items:center}
+.onas .lead{margin-top:24px}
+.atuty{list-style:none;margin:34px 0 0;padding:0;display:grid;gap:0}
+.atuty li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;padding:16px 0;border-top:1px solid var(--linia)}
+.atuty li:last-child{border-bottom:1px solid var(--linia)}
+.atuty b{display:block;font-weight:700}
+.atuty span{color:var(--szary-t);font-size:16px}
+.znak{width:14px;height:10px;margin-top:8px;position:relative}
+.znak::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--zloto)}
+.znak::after{content:"";position:absolute;left:50%;top:2px;margin-left:-4px;border:4px solid transparent;border-top:6px solid var(--zloto);border-bottom:0}
+.foto-rama{position:relative;margin:0;cursor:zoom-in}
+.foto-rama img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.foto-rama::before{content:"";position:absolute;left:-14px;top:-14px;width:46%;height:46%;border-left:2px solid var(--zloto);border-top:2px solid var(--zloto);pointer-events:none}
+.foto-rama figcaption{font-size:14px;color:var(--szary-t);margin-top:12px}
+
+/* uslugi */
+.tlo-s{background:var(--tlo-s)}
+.usl-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(32px,5vw,72px);margin-top:48px}
+.usl{padding:30px 0;border-top:1px solid #C9D2DB}
+.usl h3{color:var(--granat)}
+.usl ul{list-style:none;margin:16px 0 0;padding:0}
+.usl li{position:relative;padding:6px 0 6px 24px;color:#26343F}
+.usl li::before{content:"";position:absolute;left:0;top:17px;width:12px;height:2px;background:var(--zloto)}
+
+/* cennik: dwie szale wagi */
+.cennik{background:var(--granat);color:#fff}
+.cennik .lead{color:#D6E2EC}
+.waga{position:relative;margin-top:56px}
+.waga-belka{position:relative;height:44px;margin:0 calc(25% - 1px)}
+.waga-belka::before{content:"";position:absolute;left:0;right:0;top:12px;height:2px;background:var(--zloto-j)}
+.waga-belka i{position:absolute;top:12px;width:2px;height:32px;background:var(--zloto-j)}
+.waga-belka i:nth-child(1){left:0}.waga-belka i:nth-child(2){right:0}
+.waga-belka b{position:absolute;left:50%;top:0;margin-left:-9px;width:18px;height:14px;border:9px solid transparent;border-bottom:12px solid var(--zloto-j);border-top:0}
+.szale{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
+.szala{background:#fff;color:var(--tekst);padding:clamp(24px,3vw,36px);border-top:4px solid var(--zloto)}
+.szala h3{color:var(--granat);font-size:22px}
+.szala .pod{color:var(--szary-t);font-size:15px;margin-top:6px}
+.tab{width:100%;border-collapse:collapse;margin-top:20px;font-size:16px}
+.tab th{text-align:left;font-weight:600;font-size:13.5px;color:var(--szary-t);padding:0 0 10px;border-bottom:2px solid var(--granat)}
+.tab th:last-child,.tab td:last-child{text-align:right}
+.tab td{padding:11px 0;border-bottom:1px solid var(--linia);vertical-align:top}
+.tab td:last-child{font-weight:700;white-space:nowrap;padding-left:16px;color:var(--granat-g)}
+.tab tr:last-child td{border-bottom:0}
+.kadry{margin-top:clamp(24px,4vw,40px);display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,4vw,56px);align-items:start;background:var(--granat-g);padding:clamp(24px,3vw,40px);border-left:4px solid var(--zloto-j)}
+.kadry h3{font-size:24px}
+.kadry p{color:#D6E2EC;margin-top:10px}
+.kadry .tab th{color:#B9CCDC;border-bottom-color:var(--zloto-j)}
+.kadry .tab td{border-bottom-color:rgba(255,255,255,.18);color:#fff}
+.kadry .tab td:last-child{color:#fff}
+.cennik-uw{margin-top:22px;font-size:15px;color:#C7D7E4}
+
+/* pakiety */
+.pak-g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,36px);margin-top:48px}
+.pak{border:1px solid var(--linia);padding:clamp(24px,2.6vw,34px);display:flex;flex-direction:column}
+.pak.wyr{border:2px solid var(--granat)}
+.pak h3{font-size:24px}
+.pak .cena{font-weight:700;color:var(--granat);margin-top:8px}
+.pak ul{list-style:none;margin:22px 0 0;padding:0;flex:1}
+.pak li{position:relative;padding:8px 0 8px 24px;border-top:1px solid #E6EAEE;font-size:16px}
+.pak li::before{content:"";position:absolute;left:0;top:19px;width:12px;height:2px;background:var(--zloto)}
+.pak .btn{margin-top:24px;align-self:flex-start}
+.dodatk{margin-top:28px;color:var(--szary-t);font-size:16px}
+
+/* blog */
+.blog-g{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,36px);margin-top:44px}
+.wpis{background:#fff;padding:clamp(24px,3vw,36px);border-top:3px solid var(--granat)}
+.wpis h3{font-size:22px}
+.wpis p{color:var(--szary-t);margin-top:12px;font-size:16px}
+.wpis .aut{font-size:14px;color:var(--szary-t);margin-top:18px;font-weight:600}
+
+/* kontakt */
+.kont{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(36px,6vw,88px);align-items:start}
+.tele{margin-top:30px;display:grid;gap:12px}
+.tele a{display:flex;align-items:center;gap:14px;text-decoration:none;font:600 clamp(24px,2.6vw,32px)/1.2 var(--serif);color:var(--granat)}
+.tele a svg{width:22px;height:22px;flex:none;color:var(--zloto)}
+.kont .foto-rama{margin-top:40px}
+.form{background:var(--tlo-s);padding:clamp(24px,3vw,40px);display:grid;gap:16px}
+.form h3{font-size:24px}
+.form label{display:grid;gap:6px;font-weight:600;font-size:15px}
+.form input,.form select,.form textarea{font:400 16px/1.4 var(--sans);padding:13px 14px;border:1px solid #BFC9D3;border-radius:3px;background:#fff;color:var(--tekst);width:100%}
+.form textarea{min-height:120px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid var(--granat);outline-offset:1px}
+.form .btn{justify-self:start}
+.form-info{font-size:14px;color:var(--szary-t)}
+.form-ok{display:none;padding:12px 14px;background:#fff;border-left:3px solid var(--zloto);font-size:15px}
+.form-ok.widac{display:block}
+
+/* stopka */
+.stopka{background:var(--noc);color:#B8C5D1;padding:56px 0 28px;font-size:15px}
+.st-g{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(2,minmax(0,1fr));gap:32px}
+.st-logo{font:600 30px/1 var(--serif);color:#fff;letter-spacing:.02em}
+.st-logo-l{display:block;width:150px;height:2px;background:var(--zloto);margin:10px 0 8px}
+.st-logo small{display:block;font:600 12px/1 var(--sans);letter-spacing:.08em;color:#C9D6E2}
+.stopka h4{margin:0 0 12px;color:#fff;font:700 15px/1.3 var(--sans)}
+.stopka ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.stopka a{text-decoration:none}
+.stopka a:hover{color:#fff}
+.st-dol{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;align-items:center}
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(6,18,30,.92);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.widac{display:flex}
+.lb img{max-width:min(1600px,100%);max-height:88vh;width:auto;height:auto}
+.lb button{position:absolute;top:12px;right:12px;width:48px;height:48px;border:0;background:none;color:#fff;font-size:34px;line-height:1;cursor:pointer}
+
+@media (max-width:1100px){
+  .menu{gap:16px}.menu a{font-size:15px}
+}
+@media (max-width:960px){
+  :root{--hdr:62px}
+  .logo img{height:40px}
+  .burger{display:block}
+  .hdr-tel span{display:none}
+  .hdr-tel{width:44px;height:44px;justify-content:center;margin-left:auto}
+  .hdr-tel svg{width:22px;height:22px}
+  .menu{position:fixed;top:var(--hdr);left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;padding:8px 20px 24px;border-bottom:1px solid var(--linia);box-shadow:0 18px 30px rgba(10,30,50,.12);transform:translateY(-8px);opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s}
+  .menu.otw{transform:none;opacity:1;visibility:visible}
+  .menu a{font-size:18px;padding:14px 0;border-bottom:1px solid #E6EAEE}
+  .menu a.akt{border-bottom-color:#E6EAEE;color:var(--granat);box-shadow:inset 3px 0 0 var(--zloto);padding-left:12px}
+  .onas,.kont{grid-template-columns:minmax(0,1fr)}
+  .szale,.blog-g{grid-template-columns:minmax(0,1fr)}
+  .waga-belka{display:none}
+  .waga{margin-top:40px}
+  .kadry{grid-template-columns:minmax(0,1fr)}
+  .pak-g{grid-template-columns:minmax(0,1fr)}
+  .st-g{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .st-g>div:first-child{grid-column:1/-1}
+}
+@media (max-width:760px){
+  :root{--wrap:calc(100% - 32px)}
+  body{font-size:16px}
+  .hero{align-items:stretch}
+  .hero picture img{object-position:50% 30%}
+  .hero::after{background:linear-gradient(180deg,rgba(0,45,80,.10) 0%,rgba(0,45,80,.22) 30%,rgba(0,45,80,.86) 56%,rgba(0,40,72,.97) 100%)}
+  .hero-in{width:calc(100% - 32px);display:flex;flex-direction:column;justify-content:flex-end;padding:24px 0 26px}
+  .hero h1{font-size:clamp(25px,min(7.4vw,4.6svh),34px);line-height:1.17}
+  .h1-a{font-size:15px;margin-bottom:10px}
+  .hero .belka{width:96px;margin-top:16px}
+  .hero .lead{font-size:15.5px;line-height:1.5;margin-top:14px}
+  .przyciski{margin-top:24px;gap:10px}
+  .przyciski .btn{flex:1 1 140px;min-height:50px;padding:0 16px;font-size:15.5px}
+  .usl-g{grid-template-columns:minmax(0,1fr);margin-top:28px}
+  .foto-rama::before{left:-8px;top:-8px}
+}
+@media (max-width:400px){
+  .przyciski .btn{padding:0 10px;font-size:15px;white-space:nowrap}
+}
+@media (min-width:2000px){
+  :root{--wrap:min(1480px,calc(100% - 80px));--hdr:84px}
+  body{font-size:18px}
+  .logo img{height:62px}
+  .hero-tx{max-width:760px}
+  .hero h1{font-size:74px}
+  .h1-a{font-size:21px}
+  .hero .lead{font-size:21px}
+  .btn{min-height:58px;font-size:17px;padding:0 30px}
+  .menu a{font-size:17px}
+}
+@media (max-width:760px) and (max-height:700px){
+  .hero .lead{font-size:15px}
+}
+</style>
+</head>
+<body id="top">
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="JZ TAX Biuro Rachunkowe - początek strony"><img src="img/logo.webp" width="478" height="145" alt="JZ TAX Biuro Rachunkowe"></a>
+    <nav class="menu" id="menu" aria-label="Menu główne">
+      <a href="#top" class="akt">Strona główna</a>
+      <a href="#uslugi">Usługi księgowe</a>
+      <a href="#cennik">Oferta współpracy</a>
+      <a href="#blog">Blog</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="hdr-tel" href="tel:+48509801381" aria-label="Zadzwoń: 509 801 381"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5.5 2.5h2.6l1.4 3.6-1.8 1.2a9 9 0 0 0 5 5l1.2-1.8 3.6 1.4v2.6a1.8 1.8 0 0 1-1.9 1.8A14.6 14.6 0 0 1 3.7 4.4 1.8 1.8 0 0 1 5.5 2.5z"/></svg><span>509 801 381</span></a>
+    <button class="burger" aria-label="Otwórz menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="Biuro rachunkowe JZ TAX">
+  <picture>
+    <source media="(max-width:760px)" type="image/webp" srcset="img/hero-m-600.webp 600w, img/hero-m-900.webp 900w, img/hero-m-1220.webp 1220w" sizes="100vw">
+    <img src="img/hero-1920.webp" srcset="img/hero-1280.webp 1280w, img/hero-1920.webp 1920w, img/hero-2560.webp 2560w, img/hero-3400.webp 3400w" sizes="100vw" width="3400" height="2267" alt="Księgowa sprawdza dokumenty z kalkulatorem przy biurku" fetchpriority="high" decoding="async">
+  </picture>
+  <div class="hero-in">
+    <div class="hero-tx">
+      <h1><span class="h1-a">Biuro rachunkowe JZ TAX</span>Zadbamy o Twoją księgowość, żebyś mógł zająć się biznesem</h1>
+      <span class="belka" aria-hidden="true"></span>
+      <p class="lead">Księga przychodów i rozchodów, księgi handlowe, kadry i płace, deklaracje VAT, CIT i PIT. Licencja Ministerstwa Finansów i ubezpieczenie OC.</p>
+      <div class="przyciski">
+        <a class="btn btn-z" href="#kontakt">Zapytaj o wycenę</a>
+        <a class="btn btn-o" href="#cennik">Zobacz cennik</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sek" id="o-nas" aria-labelledby="h-onas">
+  <div class="wrap onas">
+    <div>
+      <h2 id="h-onas">Księgowość w równowadze</h2>
+      <span class="belka" aria-hidden="true"></span>
+      <p class="lead">Od kilku lat prowadzimy księgowość i rozliczenia podatkowe małych i średnich firm z różnych branż. Doradzamy, rozliczamy i pomagamy uporządkować finanse firmom, które mają niejasną sytuację. Do każdego klienta dopasowujemy się indywidualnie, a podatki rozliczamy na czas.</p>
+      <ul class="atuty">
+        <li><i class="znak" aria-hidden="true"></i><div><b>Licencja MF 9518/2005 i polisa OC</b><span>Posiadamy licencję Ministerstwa Finansów i ubezpieczenie OC, a nasi pracownicy stale podnoszą kwalifikacje.</span></div></li>
+        <li><i class="znak" aria-hidden="true"></i><div><b>Bezpieczne dane</b><span>Dokumenty i informacje od klientów przetwarzamy zgodnie z RODO.</span></div></li>
+        <li><i class="znak" aria-hidden="true"></i><div><b>E-księgowość</b><span>Dokumenty można przekazywać w plikach PDF, a dane są dostępne przez całą dobę.</span></div></li>
+        <li><i class="znak" aria-hidden="true"></i><div><b>Program do faktur</b><span>Klienci mogą wystawiać faktury sprzedażowe w naszym oprogramowaniu.</span></div></li>
+      </ul>
+    </div>
+    <figure class="foto-rama" data-lb="img/biurko-1280.webp">
+      <img src="img/biurko-720.webp" srcset="img/biurko-720.webp 720w, img/biurko-1280.webp 1280w" sizes="(max-width:960px) 92vw, 520px" width="1280" height="854" alt="Praca nad dokumentami księgowymi przy laptopie" loading="lazy" decoding="async">
+    </figure>
+  </div>
+</section>
+
+<section class="sek tlo-s" id="uslugi" aria-labelledby="h-usl">
+  <div class="wrap">
+    <h2 id="h-usl">Usługi księgowe</h2>
+    <span class="belka" aria-hidden="true"></span>
+    <p class="lead" style="margin-top:22px">Obsługujemy firmy w pełnym zakresie: od otwarcia ksiąg, przez bieżące rozliczenia, po sprawozdania i kontakt z urzędami.</p>
+    <div class="usl-g">
+      <div class="usl">
+        <h3>Księgi i ewidencje</h3>
+        <ul>
+          <li>Prowadzenie ksiąg handlowych</li>
+          <li>Prowadzenie księgi przychodów i rozchodów</li>
+          <li>Otwarcie ksiąg rachunkowych i zakładowy plan kont</li>
+          <li>Ewidencja zakupów i sprzedaży VAT</li>
+          <li>Ewidencja majątku trwałego i wyposażenia</li>
+        </ul>
+      </div>
+      <div class="usl">
+        <h3>Deklaracje i sprawozdania</h3>
+        <ul>
+          <li>Deklaracje podatkowe VAT, CIT i PIT</li>
+          <li>Deklaracje rozliczeniowe do ZUS i urzędu skarbowego</li>
+          <li>Sprawozdania finansowe</li>
+          <li>Sprawozdania statystyczne GUS</li>
+        </ul>
+      </div>
+      <div class="usl">
+        <h3>Kadry i płace</h3>
+        <ul>
+          <li>Obsługa kadrowa i płacowa pracowników</li>
+          <li>Rozliczenia z ZUS i urzędem skarbowym</li>
+          <li>Dostarczanie dokumentów do ZUS i urzędów</li>
+        </ul>
+      </div>
+      <div class="usl">
+        <h3>Doradztwo i wsparcie</h3>
+        <ul>
+          <li>Doradztwo finansowe i księgowe</li>
+          <li>Konsultacje z zakresu rachunkowości</li>
+          <li>Sprawdzanie dokumentów pod względem rachunkowym i formalnym</li>
+          <li>Udział i udzielanie informacji w trakcie kontroli</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sek cennik" id="cennik" aria-labelledby="h-cen">
+  <div class="wrap">
+    <h2 id="h-cen">Cennik obsługi księgowej</h2>
+    <span class="belka" aria-hidden="true" style="--zloto:#D8B24A"></span>
+    <p class="lead" style="margin-top:22px">Cena zależy od liczby dokumentów w miesiącu. Wszystkie kwoty są cenami brutto za miesiąc.</p>
+    <div class="waga">
+      <div class="waga-belka" aria-hidden="true"><i></i><i></i><b></b></div>
+      <div class="szale">
+        <div class="szala">
+          <h3>Księga przychodów i rozchodów</h3>
+          <p class="pod">Pakiet podstawowy, uproszczona księgowość</p>
+          <table class="tab">
+            <thead><tr><th scope="col">Dokumenty w miesiącu</th><th scope="col">Cena brutto</th></tr></thead>
+            <tbody>
+              <tr><td>1 - 9</td><td>250 zł</td></tr>
+              <tr><td>10 - 24</td><td>350 zł</td></tr>
+              <tr><td>25 - 50</td><td>400 zł</td></tr>
+              <tr><td>51 - 100</td><td>550 zł</td></tr>
+              <tr><td>101 - 150</td><td>650 zł</td></tr>
+              <tr><td>151 - 200</td><td>od 750 zł</td></tr>
+              <tr><td>powyżej 200</td><td>indywidualnie</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="szala">
+          <h3>Księgi rachunkowe</h3>
+          <p class="pod">Pełna księgowość, czyli księgi handlowe</p>
+          <table class="tab">
+            <thead><tr><th scope="col">Dokumenty w miesiącu</th><th scope="col">Cena brutto</th></tr></thead>
+            <tbody>
+              <tr><td>1 - 9</td><td>500 - 700 zł</td></tr>
+              <tr><td>10 - 24</td><td>700 - 800 zł</td></tr>
+              <tr><td>25 - 50</td><td>800 - 1000 zł</td></tr>
+              <tr><td>51 - 100</td><td>1000 - 1500 zł</td></tr>
+              <tr><td>101 - 150</td><td>1500 - 1900 zł</td></tr>
+              <tr><td>151 - 200</td><td>1900 - 2200 zł</td></tr>
+              <tr><td>powyżej 200</td><td>indywidualnie</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="kadry">
+      <div>
+        <h3>Kadry i płace z obsługą ZUS i US</h3>
+        <p>Obsługa kadrowa i płacowa pracowników razem z rozliczeniami z ZUS i urzędem skarbowym.</p>
+      </div>
+      <table class="tab">
+        <thead><tr><th scope="col">Liczba pracowników</th><th scope="col">Cena brutto</th></tr></thead>
+        <tbody>
+          <tr><td>1 - 5</td><td>od 200 zł</td></tr>
+          <tr><td>6 - 10</td><td>350 - 600 zł</td></tr>
+          <tr><td>11 - 20</td><td>650 - 800 zł</td></tr>
+          <tr><td>powyżej 20</td><td>indywidualnie</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cennik-uw">Sporządzenie rocznego sprawozdania finansowego rozliczamy w opłacie miesięcznej.</p>
+  </div>
+</section>
+
+<section class="sek" id="pakiety" aria-labelledby="h-pak">
+  <div class="wrap">
+    <h2 id="h-pak">Pakiety współpracy</h2>
+    <span class="belka" aria-hidden="true"></span>
+    <div class="pak-g">
+      <div class="pak">
+        <h3>Podstawowy</h3>
+        <p class="cena">Według cennika</p>
+        <ul>
+          <li>Księgowanie dokumentów sprzedaży i zakupu</li>
+          <li>Przygotowanie i wysyłka pliku JPK oraz deklaracji VAT</li>
+        </ul>
+        <a class="btn btn-g" href="#kontakt">Zapytaj</a>
+      </div>
+      <div class="pak wyr">
+        <h3>Premium</h3>
+        <p class="cena">Cena ustalana indywidualnie</p>
+        <ul>
+          <li>Księgowanie dokumentów sprzedaży i zakupu</li>
+          <li>Przygotowanie i wysyłka pliku JPK oraz deklaracji VAT</li>
+          <li>Kadry i płace, obsługa pracowników, ZUS</li>
+          <li>Roczna deklaracja do urzędu skarbowego</li>
+          <li>Konsultacje i wsparcie księgowe</li>
+          <li>Raportowanie, sprawozdania GUS</li>
+        </ul>
+        <a class="btn btn-g" href="#kontakt">Zapytaj</a>
+      </div>
+      <div class="pak">
+        <h3>VIP</h3>
+        <p class="cena">Cena ustalana indywidualnie</p>
+        <ul>
+          <li>Wszystko z pakietu Premium</li>
+          <li>Dodatkowe czynności na życzenie klienta</li>
+        </ul>
+        <a class="btn btn-g" href="#kontakt">Zapytaj</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sek tlo-s" id="blog" aria-labelledby="h-blog">
+  <div class="wrap">
+    <h2 id="h-blog">Z bloga</h2>
+    <span class="belka" aria-hidden="true"></span>
+    <div class="blog-g">
+      <article class="wpis">
+        <h3>Jednoosobowa działalność gospodarcza (JDG)</h3>
+        <p>Jak przepisy podatkowe definiują działalność gospodarczą i jakie są zalety oraz wady prowadzenia jednoosobowej firmy.</p>
+        <p class="aut">Justyna Zdrojkowska</p>
+      </article>
+      <article class="wpis">
+        <h3>Kod GTU 13 na fakturze</h3>
+        <p>Które usługi transportowe, przeprowadzkowe i magazynowe trzeba oznaczać kodem GTU 13 w pliku JPK_V7.</p>
+        <p class="aut">Justyna Zdrojkowska</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sek" id="kontakt" aria-labelledby="h-kon">
+  <div class="wrap kont">
+    <div>
+      <h2 id="h-kon">Rachunkowość zostaw nam</h2>
+      <span class="belka" aria-hidden="true"></span>
+      <p class="lead" style="margin-top:22px">Napisz albo zadzwoń. Powiedz, jaką formę działalności prowadzisz i ile dokumentów miesięcznie wystawiasz, a przygotujemy wycenę.</p>
+      <div class="tele">
+        <a href="tel:+48509801381"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5.5 2.5h2.6l1.4 3.6-1.8 1.2a9 9 0 0 0 5 5l1.2-1.8 3.6 1.4v2.6a1.8 1.8 0 0 1-1.9 1.8A14.6 14.6 0 0 1 3.7 4.4 1.8 1.8 0 0 1 5.5 2.5z"/></svg>509 801 381</a>
+        <a href="tel:+48691130343"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5.5 2.5h2.6l1.4 3.6-1.8 1.2a9 9 0 0 0 5 5l1.2-1.8 3.6 1.4v2.6a1.8 1.8 0 0 1-1.9 1.8A14.6 14.6 0 0 1 3.7 4.4 1.8 1.8 0 0 1 5.5 2.5z"/></svg>691 130 343</a>
+      </div>
+      <figure class="foto-rama" data-lb="img/kalk-1600.webp">
+        <img src="img/kalk-800.webp" srcset="img/kalk-800.webp 800w, img/kalk-1600.webp 1600w" sizes="(max-width:960px) 92vw, 520px" width="1600" height="1067" alt="Liczenie na kalkulatorze przy dokumentach" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <form class="form" id="form" novalidate>
+      <h3>Zapytanie o wycenę</h3>
+      <label>Imię i nazwisko<input name="imie" autocomplete="name"></label>
+      <label>Telefon lub e-mail<input name="kontakt" autocomplete="email"></label>
+      <label>Czego potrzebujesz?
+        <select name="zakres">
+          <option>Księga przychodów i rozchodów</option>
+          <option>Księgi rachunkowe (pełna księgowość)</option>
+          <option>Kadry i płace</option>
+          <option>Założenie firmy / doradztwo</option>
+          <option>Inne</option>
+        </select>
+      </label>
+      <label>Liczba dokumentów w miesiącu<input name="dok" inputmode="numeric"></label>
+      <label>Wiadomość<textarea name="wiad"></textarea></label>
+      <button class="btn btn-z" type="submit">Wyślij zapytanie</button>
+      <p class="form-ok" id="form-ok" role="status">To podgląd strony, formularz nie wysyła wiadomości.</p>
+      <p class="form-info">Odpowiadamy telefonicznie albo mailowo.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div class="st-g">
+      <div>
+        <div class="st-logo">JZ TAX<span class="st-logo-l"></span><small>BIURO RACHUNKOWE</small></div>
+        <p style="margin-top:18px;max-width:40ch">Księgowość, kadry i płace dla małych i średnich firm. Licencja Ministerstwa Finansów MF 9518/2005.</p>
+      </div>
+      <div>
+        <h4>Strona</h4>
+        <ul>
+          <li><a href="#uslugi">Usługi księgowe</a></li>
+          <li><a href="#cennik">Oferta współpracy</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+48509801381">509 801 381</a></li>
+          <li><a href="tel:+48691130343">691 130 343</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="st-dol">
+      <span>&copy; 2026 JZ TAX Biuro Rachunkowe</span>
+      <a class="wylinka-badge" href="https://wylinka.pl/?utm_source=jztax.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie"><button type="button" aria-label="Zamknij">&times;</button><img alt=""></div>
+
+<script defer src="app.js"></script>
+</body>
+</html>
